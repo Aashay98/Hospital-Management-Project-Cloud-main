@@ -8,9 +8,11 @@ Admin can also add doctor and patient from user interface and also update,
 delete from user interface.
 Patient can also register himself and login in to website with login username
 and password. Patient can also book an appointment.
+
 AWS Services: API Gateway, Lambda, RDS, SES, Cloudwatch, EC2, IAM
 Language: Python
 Web framework: Django, html, CSS, JavaScript
+
 Application is developed over Django web framework. Application is hosted
 over EC2 server.
 Application will integrate to backend system via API. API will be created &

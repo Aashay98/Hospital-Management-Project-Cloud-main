@@ -1,0 +1,224 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nothing to say</title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body>div {
+            font-family: "Oswald", sans-serif;
+            padding-top: 0px;
+            padding-bottom: 120px;
+            color: #07395c;
+            background-image: url('{% static "images/hos1.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .section-contact {
+            padding: 50px;
+            background-color: #fff;
+        }
+        
+        .section-contact .header-section .title {
+            position: relative;
+            margin-bottom: 17px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 55px;
+        }
+        
+        .section-contact .header-section .title .dot {
+            display: inline-block;
+            position: absolute;
+            bottom: 8px;
+            width: 8px;
+            height: 8px;
+            margin-left: 3px;
+            background-color: #df383f;
+        }
+        
+        .section-contact .header-section .description {
+            font-family: "Roboto", sans-serif;
+            color: #2a6287;
+        }
+        
+        .section-contact .header-section .big-title {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translate(-50%, 70%);
+            font-size: 120px;
+            font-weight: 700;
+            opacity: 0.15;
+        }
+        
+        .section-contact .form-contact {}
+        
+        .section-contact .form-contact .single-input {
+            position: relative;
+            margin-top: 40px;
+        }
+        
+        .section-contact .form-contact .single-input i {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            color: #de3842;
+        }
+        
+        .section-contact .form-contact .single-input input,
+        .section-contact .form-contact .single-input textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #07395c;
+            padding-left: 50px;
+            padding-bottom: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: border .3s;
+        }
+        
+        .section-contact .form-contact .single-input input::placeholder,
+        .section-contact .form-contact .single-input textarea::placeholder {
+            color: rgba(7, 57, 92, .3);
+        }
+        
+        .section-contact .form-contact .single-input input:focus,
+        .section-contact .form-contact .single-input textarea:focus {
+            border-color: #df383f;
+        }
+        
+        .section-contact .form-contact .single-input textarea {
+            height: 150px;
+            min-height: 50px;
+        }
+        
+        .section-contact .form-contact .submit-input input {
+            margin-top: 40px;
+            padding: 15px 50px;
+            background-color: #de3842;
+            color: #fff;
+            border: none;
+            font-weight: 700;
+            transition: background-color .3s;
+        }
+        
+        .section-contact .form-contact .submit-input input:hover {
+            background-color: #07395c;
+        }
+        
+        @media (max-width: 575.99px) {
+            .section-contact {
+                padding: 22px 60px;
+            }
+            .section-contact .header-section .title {
+                font-size: 40px;
+            }
+            .section-contact .header-section .big-title {
+                font-size: 80px;
+            }
+            .section-contact .header-section .description {
+                font-size: 14px;
+            }
+        }
+        
+        @media (min-width: 576px) and (max-width: 767.99px) {
+            .section-contact {
+                padding: 22px 60px;
+            }
+            .section-contact .header-section .title {
+                font-size: 45px;
+            }
+            .section-contact .header-section .big-title {
+                font-size: 100px;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991.99px) {
+            .section-contact {
+                padding: 22px 60px;
+            }
+            .section-contact .header-section .title {
+                font-size: 45px;
+            }
+            .section-contact .header-section .big-title {
+                font-size: 100px;
+            }
+        }
+        
+        ​ ​
+    </style>
+    <title>sumit</title>
+</head>
+
+<body>
+    {% include "hospital/navbar.html" %}
+
+    <div>
+        <!-- START CONTACT SECTION -->
+        <div class="container">
+            <div class="section-contact">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 col-xl-8">
+                        <center>
+                            <h3 class='alert alert-success' style="margin-bottom:0px;">Contact Us !</h3>
+                        </center>
+                    </div>
+                </div>
+                <div class="form-contact">
+                  <div class="alert alert-success mt-3" id="datamsg" style="display: none;"></div>
+                    <form action="#">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="Name" id="name" placeholder="ENTER YOUR NAME">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="Email" id="email" placeholder="ENTER YOUR EMAIL">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="contact" id="contact" placeholder="ENTER YOUR Contact">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single-input">
+                                    <input type="text" name="Subject" id="subject" placeholder="ENTER YOUR SUBJECT">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="single-input">
+                                    <textarea placeholder="ENTER YOUR MESSAGE" id="message" name="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="submit-input text-center">
+                                    <button class="btn btn-danger mt-3 py-3 px-5" type="button" name="send" id="myBtn">SUBMIT NOW</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- / END CONTACT SECTION -->
+    </div>
+    {% include "hospital/contactusapi.html" %}
+    {% include "hospital/footer.html" %}
+    
+</body>
+
+</html>
+/*

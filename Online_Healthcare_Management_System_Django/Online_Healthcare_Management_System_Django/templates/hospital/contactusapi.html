@@ -1,0 +1,60 @@
+<script>
+    $(document).ready(function() {
+        // Get value on button click and show alert
+        $("#myBtn").click(function() {
+            var name = $("#name").val();
+            console.log(name);
+            var email = $("#email").val();
+            console.log(email);
+            var contact = $("#contact").val();
+            console.log(contact);
+            var subject = $("#subject").val();
+            console.log(subject);
+            var message = $('textarea#message').val();
+            console.log(message);
+            if (name == "") {
+                $("#datamsg").text("Enter your name");
+                $("#datamsg").show();
+            } else if (email == "") {
+                $("#datamsg").text("Enter your email");
+                $("#datamsg").show();
+            } else if (contact == "") {
+                $("#datamsg").text("Enter your contact");
+                $("#datamsg").show();
+            }else if (subject == "") {
+                $("#datamsg").text("Enter your Subject");
+                $("#datamsg").show();
+            } else if (message == "") {
+                $("#datamsg").text("Enter your message");
+                $("#datamsg").show();
+            } else {
+                var myurl = "https://9siq2vg3r1.execute-api.us-east-1.amazonaws.com/v1/contactus";
+                var mydata = {
+                    "name": name,
+                    "email": email,
+                    "contact":contact,
+                    "subject": subject,
+                    "message": message
+                }
+                $.ajax({
+                    url: myurl,
+                    data: JSON.stringify(mydata),
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    method: "POST",
+                    success: function(data) {
+                        console.log()                        
+                        $("form")[0].reset();
+                        $("#datamsg").text(data.msg+' We will get in touch with you very soon');
+                        $("#datamsg").show();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {                        
+                        $("form")[0].reset();
+                        $("#datamsg").text(errorThrown);
+                    }
+                })
+            }
+        })
+    })
+</script>

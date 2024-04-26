@@ -1,6 +1,6 @@
 # Hospital-Management-Project-Cloud
 
-![image](https://github.com/Aashay98/Hospital-Management-Project-Cloud-main/assets/45003980/c9dba8a1-0026-4965-8b29-1557dad9f8dd)
+![image](https://github.com/Aashay98/Hospital-Management-Project-Cloud-main/assets/45003980/13bbea24-a8fb-4d12-b58b-1008a2cbc1ed)
 
 # Project Description
 
